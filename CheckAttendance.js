@@ -2,11 +2,8 @@ function calculateDailyWage(){
     const WAGE_PER_HOUR = 20;
     const HOUR_IN_DAY = 8;
     const HALF_DAY = 4;
-    var totalWorkingHour = 0;
     var totalWorkingDay = 0;
     var totalWage = 0;
-    var absentInAMonth = 0;
-
     while(totalWorkingDay < 20){
 
         const attendance = Math.floor((Math.random() * 3) +1);
