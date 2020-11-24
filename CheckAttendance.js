@@ -1,35 +1,28 @@
-const present = 1;
-const halfDay = 2;
-const absent = 3;
-
-function checkAttendance(){
-    const attendance = Math.floor((Math.random() * 3) +1)
-    switch(attendance){
-        case present:
-            return 'FullDay';
-        case halfDay:
-            return 'HalfDay';
-        case absent:
-            return 'Absent'
-    }
-}
-
 function calculateDailyWage(){
     const WAGE_PER_HOUR = 20;
     const HOUR_IN_DAY = 8;
     const HALF_DAY = 4;
+    var totalWorkingHour = 0;
+    var totalWorkingDay = 0;
+    var totalWage = 0;
+    var absentInAMonth = 0;
 
-    const attend = checkAttendance();
+    while(totalWorkingDay < 20){
 
-    if(attend == 'FullDay'){
-        return HOUR_IN_DAY * WAGE_PER_HOUR;
+        const attendance = Math.floor((Math.random() * 3) +1);
+
+        if(attendance == 1){
+            totalWage = totalWage + HOUR_IN_DAY * WAGE_PER_HOUR;
+            totalWorkingDay = totalWorkingDay + 1;
+        }
+        else if(attendance == 2){
+            totalWage = totalWage + HALF_DAY * WAGE_PER_HOUR;
+            totalWorkingDay = totalWorkingDay + 1;
+        }
+        else if(attendance == 3){
+        }
     }
-    else if(attend == 'HalfDay'){
-        return HALF_DAY * WAGE_PER_HOUR;
-    }
-    else if(attend == 'Absent'){
-        return 0;
-    }
+    return totalWage;
 }
 
 const attend = calculateDailyWage();
