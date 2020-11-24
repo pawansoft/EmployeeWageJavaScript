@@ -11,5 +11,20 @@ function checkAttendance(){
     }
 }
 
-const attend = checkAttendance();
+
+function calculateDailyWage(){
+    const WAGE_PER_HOUR = 20;
+    const HOUR_IN_DAY = 8;
+
+    const attend = checkAttendance();
+
+    if(attend == 'FullDay'){
+        return HOUR_IN_DAY * WAGE_PER_HOUR;
+    }
+    else if(attend == 'Absent'){
+        return 0;
+    }
+}
+
+const attend = calculateDailyWage();
 console.log(attend);
