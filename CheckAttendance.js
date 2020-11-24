@@ -4,14 +4,13 @@ const absent = 3;
 
 function checkAttendance(){
     const attendance = Math.floor((Math.random() * 3) +1)
-    if(attendance == present){
-        return 'FullDay'
-    }
-    else if(attendance ==  halfDay ){
-        return 'HalfDay';
-    }
-    else if(attendance ==  absent ){
-        return 'Absent';
+    switch(attendance){
+        case present:
+            return 'FullDay';
+        case halfDay:
+            return 'HalfDay';
+        case absent:
+            return 'Absent'
     }
 }
 
